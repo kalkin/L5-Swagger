@@ -53,7 +53,7 @@ class L5SwaggerServiceProvider extends ServiceProvider
 
         $this->app->bind(Generator::class, function ($app) {
             $annotationsDir = config('l5-swagger.paths.annotations');
-            $docDir = config('l5-swagger.paths.docs');
+            $docDir = config('l5-swagger.paths.docs') ?? '';
             $docsFile = $docDir.'/'.config('l5-swagger.paths.docs_json', 'api-docs.json');
             $yamlDocsFile = $docDir.'/'.config('l5-swagger.paths.docs_yaml', 'api-docs.yaml');
             $excludedDirs = config('l5-swagger.paths.excludes');
